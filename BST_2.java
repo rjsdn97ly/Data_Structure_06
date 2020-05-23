@@ -20,7 +20,9 @@ public class BST_2 <Key extends Comparable<Key>, Value> {
        else             return (Value) n.getValue(); // k$ 71! LS2
 
     }
-    public void put(Key k, Value v) {root = put(root, k, v);} 
+    public void put(Key k, Value v) {
+	    root = put(root, k, v);
+    } 
     public Node<Key, Value> put(Node<Key, Value> n, Key k, Value v){
         if (n == null) 
             return new Node<Key, Value>(k, v); 
@@ -37,7 +39,8 @@ public class BST_2 <Key extends Comparable<Key>, Value> {
 
         public Key min() {
             if (root == null) return null;
-            return (Key) min(root).getKey();} 
+            return (Key) min(root).getKey();
+	} 
         private Node<Key, Value> min(Node<Key, Value> n) {
             if (n.getLeft() == null) return n; 
             return min(n.getLeft());
@@ -88,9 +91,9 @@ public class BST_2 <Key extends Comparable<Key>, Value> {
         }
         	public void inorder(Node<Key, Value> n){ //중위 순회
         		if (n != null) {
-        	inorder(n.getLeft()); // n의 왼쪽 서브 트리를 순회하기 위해
-        	System.out.print(n.getKey() + " "); // 노드 n 방문
-        	inorder(n.getRight()); // n의 오른쪽 서브 트리를 순회하기 위해
+        			inorder(n.getLeft()); // n의 왼쪽 서브 트리를 순회하기 위해
+        			System.out.print(n.getKey() + " "); // 노드 n 방문
+        			inorder(n.getRight()); // n의 오른쪽 서브 트리를 순회하기 위해
         		}
         	}
-        	}
+        }
